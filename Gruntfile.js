@@ -65,8 +65,8 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
       },
       sass: {
-      files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-      tasks: ['sass:server', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['sass:server', 'autoprefixer']
       },	
       gruntfile: {
         files: ['Gruntfile.js']
@@ -241,33 +241,33 @@ module.exports = function (grunt) {
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     }, 
-
+    
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
-    options: {
-        includePaths: [
-            'bower_components'
-        ]
+        options: {
+            includePaths: [
+                'bower_components'
+            ]
+        },
+        dist: {
+            files: [{
+                expand: true,
+                cwd: '<%= yeoman.app %>/styles',
+                src: ['*.scss'],
+                dest: '.tmp/styles',
+                ext: '.css'
+            }]
+        },
+        server: {
+            files: [{
+                expand: true,
+                cwd: '<%= yeoman.app %>/styles',
+                src: ['*.scss'],
+                dest: '.tmp/styles',
+                ext: '.css'
+        }   ]
+        }
     },
-    dist: {
-        files: [{
-            expand: true,
-            cwd: '<%= yeoman.app %>/styles',
-            src: ['*.scss'],
-            dest: '.tmp/styles',
-            ext: '.css'
-        }]
-    },
-    server: {
-        files: [{
-            expand: true,
-            cwd: '<%= yeoman.app %>/styles',
-            src: ['*.scss'],
-            dest: '.tmp/styles',
-            ext: '.css'
-        }]
-    }
-},
 
     // Renames files for browser caching purposes
     filerev: {
