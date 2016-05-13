@@ -1,23 +1,46 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+<div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <h1>Charging Stations Near {{current.fuel_stations[0].city}}</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    <div ng-init="location='Seattle'">
+        <p>
+          <label for="location">Location:
+            <input type="text" name="location" ng-model="location">
+          </label>
+        </p>
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Find a Charging Station</button>
+        </p>
+      <dl>
+        <div ng-hide="current.fuel_stations[0].station_name === null"><dt>Station Name:</dt>
+        <dd>{{current.fuel_stations[0].station_name}}</dd>
+        <br>
+        </div>
+        <dt>Location:</dt>
+        <dd>{{current.fuel_stations[0].street_address}}</dd>
+        <dd>{{current.fuel_stations[0].city}}, {{current.fuel_stations[0].state}} {{current.fuel_stations[0].zip}} {{current.fuel_stations[0].plus4}}</dd>
+        <br>
+        <dd>{{current.fuel_stations[0].intersection_directions}}</dd>
+        <br>
+        <div ng-hide="current.fuel_stations[0].station_phone === null"><dt>Phone Number:</dt>
+        <dd>{{current.fuel_stations[0].station_phone}}</dd>
+        <br>
+        </div>
+        <div ng-hide="current.fuel_stations[0].access_days_time === null"><dt>Hours:</dt>
+        <dd>{{current.fuel_stations[0].access_days_time}}</dd>
+        <br>
+        </div>
+        <div ng-hide="current.fuel_stations[0].groups_with_access_code === null"><dt>Availability <small>(Public/Private)</small>:</dt>
+        <dd>{{current.fuel_stations[0].groups_with_access_code}}</dd>
+        <br>
+        </div>
+        <div ng-hide="current.fuel_stations[0].ev_network === null"><dt>Network:</dt>
+        <dd><a ng-href="{{current.fuel_stations[0].ev_network_web}}">{{current.fuel_stations[0].ev_network}}</a></dd>
+        <br>
+        </div>
+        <div ng-hide="current.fuel_stations[0].ev_connector_types === null"><dt>Connector Type</dt>
+        <dd>{{current.fuel_stations[0].ev_connector_types}}</dd>
+        </div>
+      </dl>
+    </div>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>
