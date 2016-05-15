@@ -13,7 +13,7 @@ angular.module('chargingStationsApp')
     // ...
 
     // Public API here
-    return $resource('https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?location=seattle,wa&fuel_type=ELEC&api_key=aPpj2Zmtm21V9j4douZuoEtDCNKpdxddl811Rk8a', {}, {
+    return $resource('https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?limit=10&location=:location&fuel_type=ELEC&api_key=aPpj2Zmtm21V9j4douZuoEtDCNKpdxddl811Rk8a', {}, {
       query: {
         method:'GET',
         params:{
