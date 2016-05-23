@@ -5732,6 +5732,12 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+div[ng-view].ng-enter {
+  animation: fadeIn 0.5s; }
+
+div[ng-view].ng-leave {
+  animation: fadeOut 0.5s; }
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -5759,6 +5765,18 @@ body {
     line-height: 40px;
     padding-bottom: 19px; }
 
+/* Station Name font */
+.stationName dd {
+  font-size: 1.5em;
+  font-weight: bold; }
+
+/* Saved Cities List */
+.saved-cities-list {
+  list-style: none; }
+
+.saved-cities-list li {
+  padding-bottom: 1em; }
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -5768,13 +5786,15 @@ body {
 .container-narrow > hr {
   margin: 30px 0; }
 
-/* Main marketing message and sign up button */
+/* Main location area and search field */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5; }
   .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px; }
+  .jumbotron dd, .jumbotron dt {
+    text-align: left; }
 
 /* Supporting marketing content */
 .marketing {
