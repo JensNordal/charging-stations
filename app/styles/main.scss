@@ -2,6 +2,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import "transitions";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -36,6 +37,21 @@ body {
   }
 }
 
+/* Station Name font */
+.stationName dd {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Saved Cities List */
+.saved-cities-list {
+  list-style: none;
+}
+
+.saved-cities-list li {
+    padding-bottom: 1em;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -47,7 +63,7 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
+/* Main location area and search field */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -55,6 +71,9 @@ body {
   .btn {
     font-size: 21px;
     padding: 14px 24px;
+  }
+  dd, dt {
+  text-align: left;
   }
 }
 
