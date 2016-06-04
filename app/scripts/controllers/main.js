@@ -21,7 +21,6 @@ angular.module('chargingStationsApp')
                 console.log('savingCity: ' + city);
                 var cityData = {
                     'city': city,
-                    //'id': city.id
                 };
                 if (!$localStorage.savedCities) {
                     $localStorage.savedCities = [cityData];
