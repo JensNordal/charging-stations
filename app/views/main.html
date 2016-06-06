@@ -1,7 +1,7 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
     <h1>Find Charging Stations Near {{current.fuel_stations[0].city}}</h1>
     <p class="lead">
-        <div ng-init="location='Enter a US City'">
+        <div ng-init="location=' City or ZIP'">
             <form>
                 <p>
                     <label for="location">Location: 
@@ -70,7 +70,7 @@
         </div>
         <div>
         <p>
-            <button class="btn btn-lg btn-primary" ng-click="saveCity(current.fuel_stations[0].city)">Save City {{current.fuel_stations[0].city}}</button>
+            <button id="AlertBtn" class="btn btn-sm btn-primary" ng-hide="current.fuel_stations[0].city == null" ng-click="saveCity(current.fuel_stations[0].city)">Save {{current.fuel_stations[0].city}}</button>
         </p>
         </div>
         <!-- !!!!! TODO: Update so 'City Saved'/'City Already Saved' refreshes for each new city search. !!!!!-->
@@ -83,17 +83,17 @@
             </p>
         </div>
 </div>
-<!--  TODO!!!: FIX SAVE CITY BUTTON!!!!!!!!!!  -->
+<!--  TODO!!!: SAVE CITY BUTTON!!!!!!!!!!  -->
 <div ng-if="storage.savedCities">
     <h2>Saved Cities</h2>
     <ul class="saved-cities-list">
         <li ng-repeat="city in storage.savedCities">
-            <a ng-href="/charging-stations/#/{{city.city}}" class="btn btn-lg btn-primary">{{city.city}}</a>
+            <a ng-href="/#/{{city.city}}" class="btn btn-sm btn-primary">{{city.city}}</a>
         </li>
     </ul>
 </div>
 <br>
-<!-- !!!!! TODO:  FIX SCROLL TO TOP !!!!!
+<!-- !!!!! TODO:  SCROLL TO TOP !!!!!
 <a class="cd-top" ng-href="/#/{{city.city}}">Back to Top</a>
 <br>
 -->
