@@ -5733,10 +5733,10 @@ button.close {
     display: none !important; } }
 
 div[ng-view].ng-enter {
-  animation: fadeIn 0.5s; }
+  animation: fadeIn 0.7s; }
 
 div[ng-view].ng-leave {
-  animation: fadeOut 0.5s; }
+  animation: fadeOut 0.3s; }
 
 .browsehappy {
   margin: 0.2em 0;
@@ -5745,7 +5745,14 @@ div[ng-view].ng-leave {
   padding: 0.2em 0; }
 
 body {
-  padding: 0; }
+  padding: 0;
+  background-image: url("/images/background.jpg");
+  background-attachment: fixed; }
+
+.about {
+  background-color: white;
+  padding: 2em;
+  border-radius: 0.5em; }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -5772,16 +5779,24 @@ body {
 
 /* Saved Cities List */
 .saved-cities-list {
-  list-style: none; }
-
-.saved-cities-list li {
-  padding-bottom: 1em; }
+  list-style: none;
+  text-align: left;
+  background-color: white;
+  opacity: 0.9;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 0.5em; }
+  .saved-cities-list li {
+    padding-bottom: 1em; }
+  .saved-cities-list #savedBtn {
+    font-size: 16px; }
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5; }
+  border-top: 1px solid #e5e5e5;
+  background-color: white; }
 
 .container-narrow > hr {
   margin: 30px 0; }
@@ -5789,10 +5804,12 @@ body {
 /* Main location area and search field */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5; }
+  border-bottom: 1px solid #e5e5e5;
+  background-color: white;
+  opacity: 0.9; }
   .jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px; }
+    font-size: 19px;
+    padding: 0.5em; }
   .jumbotron dd, .jumbotron dt {
     text-align: left; }
 
