@@ -5746,7 +5746,7 @@ div[ng-view].ng-leave {
 
 body {
   padding: 0;
-  background-image: url("/images/background.jpg");
+  background-image: url("/charging-stations/images/background.jpg");
   background-attachment: fixed; }
 
 .about {
