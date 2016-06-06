@@ -69,9 +69,9 @@
             </dl>
         </div>
         <div>
-        <p>
-            <button id="AlertBtn" class="btn btn-sm btn-primary" ng-hide="current.fuel_stations[0].city == null" ng-click="saveCity(current.fuel_stations[0].city)">Save {{current.fuel_stations[0].city}}</button>
-        </p>
+            <p>
+                <button id="AlertBtn" class="btn btn-sm btn-primary" ng-hide="current.fuel_stations[0].city == null" ng-click="saveCity(current.fuel_stations[0].city)">Save {{current.fuel_stations[0].city}}</button>
+            </p>
         </div>
         <!-- !!!!! TODO: Update so 'City Saved'/'City Already Saved' refreshes for each new city search. !!!!!-->
         <div ng-messages="citySaved">
@@ -82,17 +82,19 @@
                 {{current.fuel_stations[0].city}} has already been saved to your list of cities.
             </p>
         </div>
+
 </div>
-<!--  TODO!!!: SAVE CITY BUTTON!!!!!!!!!!  -->
-<div ng-if="storage.savedCities">
+
+<div ng-if="storage.savedCities" class="saved-cities-list">
     <h2>Saved Cities</h2>
     <ul class="saved-cities-list">
         <li ng-repeat="city in storage.savedCities">
-            <a ng-href="/#/{{city.city}}" class="btn btn-sm btn-primary">{{city.city}}</a>
+            <a ng-href="/#/{{city.city}}" id="savedBtn">{{city.city}}</a>
         </li>
     </ul>
 </div>
 <br>
+
 <!-- !!!!! TODO:  SCROLL TO TOP !!!!!
 <a class="cd-top" ng-href="/#/{{city.city}}">Back to Top</a>
 <br>

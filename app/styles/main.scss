@@ -3,6 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 @import "transitions";
+@import "mixins";
 
 
 .browsehappy {
@@ -14,6 +15,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background-image: url("/images/background.jpg");
+  background-attachment: fixed;
+      
+}
+
+.about {
+  background-color: white;
+  padding: 2em;
+  @include border-radius;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -47,10 +57,20 @@ body {
 /* Saved Cities List */
 .saved-cities-list {
   list-style: none;
-}
+  text-align: left;
+  background-color: white;
+  opacity: 0.9;
+  padding: 1em;
+  margin: 1em;
+  @include border-radius;
 
-.saved-cities-list li {
+  li {
     padding-bottom: 1em;
+  }
+
+  #savedBtn {
+    font-size: 16px;
+  }
 }
 
 /* Custom page footer */
@@ -58,6 +78,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  background-color: white;
 }
 
 .container-narrow > hr {
@@ -68,11 +89,14 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: white;
+  opacity: 0.9;
 
   .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+    font-size: 19px;
+    padding: 0.5em;
   }
+
   dd, dt {
   text-align: left;
   }
