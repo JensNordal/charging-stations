@@ -95,7 +95,7 @@
 </div>
 <br>
 
-
+<!--
 
 <div ng-app="myApp" ng-strict-di class="map-container">
   <script>
@@ -107,8 +107,8 @@
     NgMap.getMap().then(function(evtMap) {
       map = evtMap;
       vm.map = map;
-      console.log('loading scripts/starbucks.json');
-      $http.get('scripts/starbucks.json').then(function(resp) {
+      console.log('loading json data');
+      $http.get('scripts/stations.json').then(function(resp) {
         console.log('stores', stores);
         var stores = resp.data;
         for (var i=0; i<stores.length; i++) {
@@ -118,7 +118,7 @@
           var marker = new google.maps.Marker(store);
           vm.stores.push(marker);
         }
-        console.log('finished loading scripts/starbucks.json', 'vm.stores', vm.stores.length);
+        console.log('finished loading json data', 'vm.stores', vm.stores.length);
         vm.markerClusterer = new MarkerClusterer(map, vm.stores, {});
       }, function(err) { console.log('err', err)});
     });
@@ -151,7 +151,7 @@
     ng-map {display:block; width:100%; height:100%;}
   </style>
 
-
+-->
 
   <h1>Map container</h1>
   <hr />
