@@ -5738,6 +5738,10 @@ div[ng-view].ng-enter {
 div[ng-view].ng-leave {
   animation: fadeOut 0.3s; }
 
+.map-container {
+  width: 600px;
+  height: 600px; }
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
