@@ -6,6 +6,16 @@
     <meta name="description" content="Find US Electric Vehicle Charging Stations">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png" />
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
@@ -55,6 +65,8 @@
     <div ng-view=""></div>
     </div>
 
+    
+
     <div class="footer">
       <div class="container">
         <p>Created by <a href="http://jensnordal.com">Jens Nordal </a> <span class="glyphicon glyphicon-copyright-mark"></span> 2016</p>
@@ -69,9 +81,13 @@
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', 'UA-86918958-1');
        ga('send', 'pageview');
     </script>
+    <!-- Google Maps API w/key located at main.html-->
+    
+    <!-- end google scripts -->
+    
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -87,6 +103,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -94,7 +111,11 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/myctrl.js"></script>
         <script src="scripts/services/current.js"></script>
+
+        <script src="scripts/services/map.js"></script>
+
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
