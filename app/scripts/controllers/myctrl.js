@@ -9,7 +9,7 @@
  */
 
 
-angular.module('ngMap')
+angular.module('chargingStationsApp')
   .controller('ContactCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
