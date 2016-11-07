@@ -5738,7 +5738,7 @@ div[ng-view].ng-enter {
 div[ng-view].ng-leave {
   animation: fadeOut 0.3s; }
 
-.map-container {
+#map-container {
   width: 600px;
   height: 600px; }
 
