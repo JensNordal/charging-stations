@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngStorage',
-    'ngTouch'
+    'ngTouch',
+    'ngMap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -40,7 +41,7 @@ angular
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
-        controller: 'MyCtrl',
+        controller: 'ContactCtrl',
         controllerAs: 'contact'
       })
       .otherwise({
