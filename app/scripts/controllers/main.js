@@ -8,19 +8,6 @@
  * Controller of the chargingStationsApp
  */
 
-angular.module('autoCompleteApp', ['ngMap']).controller('MyCtrl', function(NgMap) {
-  var vm = this;
-  vm.types = "['establishment']";
-  vm.placeChanged = function() {
-    vm.place = this.getPlace();
-    console.log('location', vm.place.geometry.location);
-    vm.map.setCenter(vm.place.geometry.location);
-  };
-  NgMap.getMap().then(function(map) {
-    vm.map = map;
-  });
- });
-
 angular.module('chargingStationsApp')
     .controller('MainCtrl', function($scope, current, $localStorage) {
         $scope.current = current.query();

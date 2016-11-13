@@ -1,11 +1,10 @@
-<div ng-app class="jumbotron" ng-controller="MainCtrl">
+<div class="jumbotron" ng-controller="MainCtrl">
     <h1>Find Charging Stations Near {{current.fuel_stations[0].city}}</h1>
     <p class="lead">
         <div ng-init="location=' City, ZIP, or Address'">
             <form>
                 <p>
-                    <input places-auto-complete type="text" size=40 name="location" ng-model="location" ng-model="vm.address" component-restrictions="{country:'us'}" types="{{types}}" on-place-changed="vm.placeChanged()" />
-                    <br/>
+                    <input places-auto-complete type="text" size=40 name="location" ng-model="location" ng-model="vm.address" component-restrictions="{country:'us'}" types="{{types}}" />
                     <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()" type="submit">Search</button>
                 </p>
             </form>
