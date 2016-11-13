@@ -95,10 +95,16 @@
 
 <!-- Map -->
 <div id="map-container">
-    <ng-map default-style="true" center="current-location" zoom="8">
-        <info-window position="current-location">
-            <span>Loation found using HTML5.</span>
-        </info-window>
-    </ng-map>
+    <ng-map zoom="9" center="[47.70, -122.18]">
+    <marker position="[47.71, -122.23]" title="hello"></marker>
+    <marker position="[47.68, -122.19]" title="marker" animation="Animation.DROP"></marker>
+    <marker position="[47.66, -122.15]" title="drag me" draggable="true"></marker>
+    <marker position="[47.63, -122.12]" title="how" animation="Animation.BOUNCE"></marker>
+    <marker position="[47.60, -122.10]" title="are"></marker>
+    <marker position="[47.58, -122.07]" title="you"
+      icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"></marker>
+    <marker position="[47.56, -122.05]" title="from"></marker>
+    <marker position="[47.54, -122.03]" title="jens"></marker>
+  </ng-map>
 </div>
  <!-- end map -->
