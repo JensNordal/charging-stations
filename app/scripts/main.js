@@ -1,31 +1,35 @@
 'use strict';
+/* jshint ignore:start */
+/*angular.module('chargingStationsApp', ['ngMap'])
 
+.controller('mapCtrl', function ($scope, $http) {
 
-/* jQuery(document).ready(function($){
-    // browser window scroll (in pixels) after which the "back to top" link is shown
-    var offset = 300,
-        //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-        offset_opacity = 1200,
-        //duration of the top scrolling animation (in ms)
-        scroll_top_duration = 700,
-        //grab the "back to top" link
-        $back_to_top = $('.cd-top');
+    var mapOptions = {
+        center: new google.maps.LatLng(38.5602, -121.4241),
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoomControl: false,
+        disableDefaultUI: true
+    };
 
-    //hide or show the "back to top" link
-    $(window).scroll(function(){
-        ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-        if( $(this).scrollTop() > offset_opacity ) { 
-            $back_to_top.addClass('cd-fade-out');
-        }
+    var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
+ 
+    $http.get('https://gist.githubusercontent.com/vgrem/c7ec78e7078c2c9ed1c3/raw/959e9d8b8e60544fcc169ea890e84a2624ed8bbb/csus_locations.json').success(function (data) {
+        $scope.locations = data.locations;
+
+        $scope.locations.forEach(function(item){
+
+            var latLng = new google.maps.LatLng(item.latitude, item.longitude);
+            var marker = new google.maps.Marker({
+               position: latLng,
+               title: item.name,
+               map: map
+            });
+           
+        });
+        
     });
 
-    //smooth scroll to top
-    $back_to_top.on('click', function(event){
-        event.preventDefault();
-        $('body,html').animate({
-            scrollTop: 0 ,
-            }, scroll_top_duration
-        );
-    });
-
-}); */
+});
+/* jshint ignore:end */

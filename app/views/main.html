@@ -1,15 +1,11 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
     <h1>Find Charging Stations Near {{current.fuel_stations[0].city}}</h1>
     <p class="lead">
-        <div ng-init="location=' City or ZIP'">
+        <div ng-init="location=' City, ZIP, or Address'">
             <form>
                 <p>
-                    <label for="location">Location:
-                        <input type="text" name="location" ng-model="location">
-                    </label>
-                </p>
-                <p>
-                    <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()" type="submit">Find a Charging Station</button>
+                    <input type="text" name="location" ng-model="location">
+                    <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()" type="submit">Search</button>
                 </p>
             </form>
             <br>
@@ -82,6 +78,13 @@
                 {{current.fuel_stations[0].city}} has already been saved to your list of cities.
             </p>
         </div>
+        <!-- Map -->
+<div id="map-container">
+    <ng-map zoom="9" center="[47.70, -122.18]">
+    <marker ng-repeat="station in current.fuel_stations" position="{{station.latitude}}, {{station.longitude}}"></marker>
+  </ng-map>
+</div>
+ <!-- end map -->
 </div>
 <div ng-if="storage.savedCities" class="saved-cities-list">
     <h2>Saved Cities</h2>
@@ -93,18 +96,4 @@
 </div>
 <br>
 
-<!-- Map -->
-<div id="map-container">
-    <ng-map zoom="9" center="[47.70, -122.18]">
-    <marker position="[47.71, -122.23]" title="hello"></marker>
-    <marker position="[47.68, -122.19]" title="marker" animation="Animation.DROP"></marker>
-    <marker position="[47.66, -122.15]" title="drag me" draggable="true"></marker>
-    <marker position="[47.63, -122.12]" title="how" animation="Animation.BOUNCE"></marker>
-    <marker position="[47.60, -122.10]" title="are"></marker>
-    <marker position="[47.58, -122.07]" title="you"
-      icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"></marker>
-    <marker position="[47.56, -122.05]" title="from"></marker>
-    <marker position="[47.54, -122.03]" title="jens"></marker>
-  </ng-map>
-</div>
- <!-- end map -->
+
