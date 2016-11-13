@@ -29,9 +29,9 @@ angular
         controllerAs: 'main'
       })
     /*  .when('/:cityName', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/city.html',
+        controller: 'CityCtrl',
+        controllerAs: 'city'
       })
     */
       .when('/about', {

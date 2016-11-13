@@ -93,12 +93,12 @@
 </div>
 <br>
 
-
+<!-- Map -->
 <div id="map-container">
-    <div ng-app="ngMap" class="map-size">
-        <p>map here</p>
-        <ng-map center="47.363882,-122.044922" zoom="7">
-            <marker position="47.363882,-122.044922" title="Hello World!"></marker>
-        </ng-map>
-    </div>
+    <ng-map default-style="true" center="current-location" zoom="8">
+        <info-window position="current-location">
+            <span>Loation found using HTML5.</span>
+        </info-window>
+    </ng-map>
 </div>
+ <!-- end map -->
