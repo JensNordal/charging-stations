@@ -325,8 +325,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.dist %>/styles/main.css': [
-            '.tmp/styles/{,*/}*.css',
-          '<%= yeoman.app %>/styles/{,*/}*.css'
+            '.tmp/styles/{,*/}*.css'
           ]
         }
       }
@@ -521,7 +520,7 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin',
-    // 'cssmin',
+    'cssmin',
   ]);
 
   grunt.registerTask('default', [
