@@ -4,7 +4,8 @@
         <div ng-init="location=' City, ZIP, or Address'">
             <form>
                 <p>
-                    <input type="text" name="location" ng-model="location">
+                    <input places-auto-complete type="text" size=40 name="location" ng-model="location" ng-model="vm.address" component-restrictions="{country:'us'}" types="{{types}}" on-place-changed="vm.placeChanged()" />
+                    <br/>
                     <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()" type="submit">Search</button>
                 </p>
             </form>
