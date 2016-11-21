@@ -1,4 +1,5 @@
 'use strict';
+
 /* jshint ignore:start */
 /*angular.module('chargingStationsApp', ['ngMap'])
 

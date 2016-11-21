@@ -14,6 +14,10 @@ angular.module('chargingStationsApp')
         $scope.storage = $localStorage;
 
 
+        $scope.placeChanged = function() {
+            $scope.place = this.getPlace();
+        };
+
         $scope.refreshCurrent = function() {
             $scope.current = current.query({
                 location: $scope.location
