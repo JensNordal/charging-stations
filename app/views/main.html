@@ -13,7 +13,7 @@
             <!-- Map -->
             <div id="map-canvas">
                 <ng-map default-style="true" zoom="4" center="[39.950, -99.005]" scrollwheel="false" zoom-to-include-markers="auto">
-                    <marker centered="true" ng-repeat="station in current.fuel_stations" position="{{station.latitude}}, {{station.longitude}}" on-click="showStation(event, station)">
+                    <marker class="marker" centered="true" ng-repeat="station in current.fuel_stations" position="{{station.latitude}}, {{station.longitude}}" on-click="showStation(event, station)">
                     </marker>
                     <info-window id="myInfoWindow">
                         <div>
@@ -70,6 +70,7 @@
             </div>
             <!-- end map -->
             <br>
+            <script type="text/javascript">$('#stationLink').click(function(){ showStation(event, station); return false; });</script>
             <div ng-hide="current.total_results == null">
                 <dt>Total Stations:</dt>
                 <dd>{{current.total_results}}</dd>
@@ -78,7 +79,7 @@
             <br>
             <dl ng-repeat="station in current.fuel_stations">
                 <div class="stationName" ng-hide="station.station_name === null">
-                    <dd>{{station.station_name}}</dd>
+                    <a id="stationLink" title="Click to open infowindow on map" href="#/"><dd>{{station.station_name}}</dd></a>
                     <br>
                 </div>
                 <div ng-hide="station.street_address === null">

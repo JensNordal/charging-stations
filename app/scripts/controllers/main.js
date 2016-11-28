@@ -13,21 +13,21 @@ angular.module('chargingStationsApp')
         $scope.current = current.query();
         $scope.storage = $localStorage;
 
-
+        // Display infowindow on click of map marker
         $scope.showStation = function(event, station) {
             $scope.station = station;
             $scope.showInfoWindow('myInfoWindow', this);
         };
-
+        // Set search query field to query on keyboard entry ***TODO: TEST!!! ***
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
         };
-
+        // Refresh current location on search query
         $scope.refreshCurrent = function() {
             $scope.current = current.query({
                 location: $scope.location
             });
-
+            // Save city to local storage
             $scope.saveCity = function(city) {
                 console.log('savingCity: ' + city);
                 var cityData = {
