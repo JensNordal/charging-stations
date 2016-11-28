@@ -14,6 +14,11 @@ angular.module('chargingStationsApp')
         $scope.storage = $localStorage;
 
 
+        $scope.showStation = function(event, station) {
+            $scope.station = station;
+            $scope.showInfoWindow('myInfoWindow', this);
+        };
+
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
         };
