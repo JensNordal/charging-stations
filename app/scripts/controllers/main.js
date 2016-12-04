@@ -13,12 +13,12 @@ angular.module('chargingStationsApp')
         $scope.current = current.query();
         $scope.storage = $localStorage;
 
-        // Display infowindow on click of map marker
+        // Display infowindow on click of map marker or list station name
         $scope.showStation = function(event, station) {
             $scope.station = station;
-            $scope.showInfoWindow('myInfoWindow', this);
+            $scope.showInfoWindow('infoWindow', station.station_name);
         };
-        // Set search query field to query on keyboard entry ***TODO: TEST!!! ***
+        // Set search query field to query on keyboard entry
         $scope.placeChanged = function() {
             $scope.place = this.getPlace();
         };
