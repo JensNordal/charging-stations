@@ -9,23 +9,25 @@
  */
 
 angular.module('chargingStationsApp')
-    .controller('MainCtrl', function($scope, current, $localStorage) {
+    .controller('MainCtrl', function($scope, current, $localStorage, $routeParams) {
         $scope.current = current.query();
         $scope.storage = $localStorage;
+        $scope.city = $routeParams.city;
 
+        // Set search query field to query on keyboard entry
+        $scope.placeChanged = function() {
+            $scope.place = this.getPlace();
+        };
         // Display infowindow on click of map marker or list station name
         $scope.showStation = function(event, station) {
             $scope.station = station;
             $scope.showInfoWindow('infoWindow', station.station_name);
         };
-        // Set search query field to query on keyboard entry
-        $scope.placeChanged = function() {
-            $scope.place = this.getPlace();
-        };
         // Refresh current location on search query
         $scope.refreshCurrent = function() {
             $scope.current = current.query({
-                location: $scope.location
+                location: $scope.location,
+                city: $routeParams.city
             });
             // Save city to local storage
             $scope.saveCity = function(city) {
@@ -59,5 +61,9 @@ angular.module('chargingStationsApp')
                     }
                 }
             };
+        };
+        // Delete saved cities on demand
+        $scope.deleteX = function() {
+            delete $localStorage.savedCities;
         };
     });

@@ -17,7 +17,7 @@ angular.module('chargingStationsApp')
       query: {
         method:'GET',
         params:{
-          location: ''
+          location: null
         },
         isArray:false
       }

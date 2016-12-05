@@ -146,8 +146,9 @@
     <h2>Saved Cities</h2>
     <ul class="saved-cities-list">
         <li ng-repeat="city in storage.savedCities">
-            <a ng-href="" id="savedBtn">{{city.city}}</a>
+            <a ng-href="../#/{{city.city}}" id="savedBtn">{{city.city}}</a>
         </li>
     </ul>
+    <button id="DangerBtn" class="btn btn-sm btn-danger" ng-hide="storage.savedCities == null" ng-click="deleteX()">X</button>
 </div>
 <br>
